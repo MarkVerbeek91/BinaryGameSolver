@@ -1,4 +1,5 @@
 from functools import reduce
+from copy import deepcopy
 
 
 def find_zeros(lst):
@@ -40,7 +41,7 @@ def condenser(parts):
 
 def extend(part, i, n):
     base = [None] * n
-    base[i : i + 3] = part
+    base[i: i + 3] = part
     return base
 
 
@@ -51,7 +52,33 @@ def is_solved(game):
 def print_game(game):
     print(
         "\n".join(
-            ["".join(["N" if r is None else f"{r}" for r in row]) for row in game]
+            [" ".join([" " if r is None else f"{r}" for r in row]) for row in game]
         )
     )
-    print()
+    print("-" * 6)
+
+
+def mutate(game):
+    for i, row in enumerate(game):
+        for j, num in enumerate(row):
+            if num is not None:
+                continue
+            coordinate = (i, j)
+            yield get_mutated_game(deepcopy(game), coordinate, 0)
+            yield get_mutated_game(deepcopy(game), coordinate, 1)
+
+
+def get_mutated_game(game, coordinate, digit):
+    game[coordinate[0]][coordinate[1]] = digit
+    return game
+
+
+def to_short_notation(game):
+    return "\n".join(
+        [" ".join([" " if r is None else f"{r}" for r in row]) for row in game]
+    )
+
+
+def from_short_notation(string):
+    # return [ [int(x) if ]]
+    paas

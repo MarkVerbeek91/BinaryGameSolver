@@ -58,3 +58,16 @@ def test_extend():
 def test_game_unsolved():
     assert utils.is_solved([[0]])
     assert not utils.is_solved([[1, 0], [0, None]])
+
+
+def test_mutate_game():
+    game = [[None, 1], [None, None]]
+
+    game_mutate = utils.mutate(game)
+
+    assert next(game_mutate) == [[0, 1], [None, None]]
+    assert next(game_mutate) == [[1, 1], [None, None]]
+    assert next(game_mutate) == [[None, 1], [0, None]]
+
+
+

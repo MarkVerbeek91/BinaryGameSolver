@@ -44,3 +44,14 @@ def test_need_second_iteration():
     game = [[0, N, N, 1], [N, N, 1, N]]
 
     assert solver(game) == [[0, 1, 0, 1], [1, 0, 1, 0]]
+
+
+def test_mutate_solver():
+    game = [
+        [0, N, 1, N],
+        [1, N, 1, N],
+        [N, N, 0, N],
+        [N, N, N, N],
+    ]
+
+    assert solver(game) == [[0, 1, 1, 0], [1, 0, 1, 0], [1, 0, 0, 1], [0, 1, 0, 1],]

@@ -21,10 +21,26 @@ game1 = [
     [N, 1, N, N, N, N, N, N, N, 0, N, N],
     [1, 1, N, N, N, N, 0, N, N, N, 1, 0],
     [N, N, N, N, N, 0, N, N, 0, N, 1, N],
-    [N, N, 0, N, 1, N, N, N, N, N, N, 1],
+    [N, N, 0, N, 1, N, N, N, N, N, N, 0],
     [N, 1, N, 0, N, N, 0, N, N, N, 0, N],
     [0, N, N, N, N, N, N, N, N, 1, N, N],
 ]
+
+game2 = [
+    [0, N, 1, 1, N, N, N, N, N, 0, N, N],
+    [N, N, 1, N, N, N, N, N, 0, 0, N, 0],
+    [0, N, N, 0, N, N, N, 1, N, N, 1, N],
+    [1, 1, N, N, N, 1, N, N, N, N, N, N],
+    [N, N, N, N, 0, N, 0, N, N, N, N, N],
+    [N, N, N, N, N, N, N, N, N, 1, N, 1],
+    [0, 0, N, N, 1, N, N, N, N, N, N, N],
+    [N, N, N, 0, N, 0, 0, N, N, N, N, N],
+    [N, 0, N, N, N, 0, N, 0, N, N, N, N],
+    [0, N, N, N, 1, N, N, N, N, N, N, 0],
+    [N, N, 1, 0, N, 0, 1, N, N, 0, N, N],
+    [0, 1, N, N, N, N, 1, 1, N, N, 1, N],
+]
+
 
 if __name__ == "__main__":
     print(solver(game1))
